@@ -1,0 +1,41 @@
+Sistemsko testiranje po metodi crne kutije:
+Kako bismo testirali ovaj kod Calculate uradicemo sljedece:
+
+*Testiranje osnovnih aritmetickih operacija sa cijelim brojevima:
+Ulaz:2+3 izlaz:5
+Ulaz:4-1 izlaz:3
+
+*Sa negativnim cijelim brojevima:
+Ulaz:-2+3 izlaz:1
+Ulaz:4-7 izalz:-3
+
+*Sa decimalnim brojevima:
+Ulaz:2.5+3.5 izlaz:6
+Ulaz:4.2-1.7 izlaz:2.5
+
+*Dijeljenje sa nulom:
+Ulaz:4/0 izlaz:Infitity
+Ulaz:-4/0 izlaz:Infitity
+
+*Testiranje sa nevazecim karakterima:
+Ulaz:2+x izlaz:ERROR 
+Ulaz:5^2 izlaz:ERROR
+
+*Testiranje sa zagradom
+Ulaz:2+(3-1) ilzaz:ERROR
+
+Jedinicni test : 
+
+import org.unit.Test;
+import static org.unit.Assert.assertEquals;
+
+public class CalculatorTest {
+
+    @Test
+public void testBasicAddition() {
+        String expression = "3+2";
+        String expected = "5.0";
+        String actual = Calculator.Run(expression);
+        assertEquals(expected, actual);
+    }
+}
